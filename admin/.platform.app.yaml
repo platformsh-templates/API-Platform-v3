@@ -41,9 +41,8 @@ disk: 1024
 
 # The mounts that will be performed when the package is deployed.
 mounts:
-  '/build_platform': 'shared:files/build_platform'
   '/.tmp_platformsh': 'shared:files/tmp_platformsh'
-#  '/build': 'shared:files/build'
+  '/build': 'shared:files/build'
   '/.cache': 'shared:files/.cache'
   '/node_modules/.cache': 'shared:files/node_modules/.cache'
 
@@ -53,5 +52,5 @@ hooks:
       set -eu
       corepack yarn install --immutable --force
     post_deploy: |
-      corepack yarn run build --force
       corepack yarn run buildenvvar
+      corepack yarn run build --force
