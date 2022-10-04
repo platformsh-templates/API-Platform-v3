@@ -81,7 +81,7 @@ Clone the GitHub repository and push its content to your Platform.sh project:
 
 ```bash
 git clone git@github.com:platformsh-templates/API-Platform-v3.git
-cd platformsh-example-api-platform-reactjs/
+cd API-Platform-v3/
 git remote add platform [project-id]@git.[region].platform.sh:[project-id].git
 git push platform main
 ```
@@ -101,11 +101,13 @@ You can now access the `admin` URL provided by Platform.sh and enjoy.
 The quickest way to deploy this template on Platform.sh is by clicking the button below.
 This will automatically create a new project and initialize the repository for you.
 
-TODO You can also quickly recreate this project locally with the following command:
+[comment]: <> (TODO You can also quickly recreate this project locally with the following command:)
 
-```bash
-composer create-project platformsh-templates/API-Platform-v3:main -s dev
-```
+[comment]: <> (```bash)
+
+[comment]: <> (composer create-project platformsh-templates/API-Platform-v3:main -s dev)
+
+[comment]: <> (```)
 
 
 > **Note:**
@@ -562,18 +564,6 @@ $ platform mount:upload -e main --mount private --source ./private
 Note that `rsync` is picky about its trailing slashes, so be sure to include those.
 
 </details>
-
-<h2>What's next?</h2>
-  <p>
-   Your project is already deployed in production. To start working on it locally:
-   <ol>
-       <li>Clone it in a local directory via <code>git clone XXXX some-dir/</code></li>
-       <li>Install Docker and start services via <code>docker-compose up -d</code></li>
-       <li>Install the <a href="https://symfony.com/download">Symfony CLI</a> and start a web server via <code>symfony server:start -d</code></li>
-       <li>Commit changes, test them, push the new code to your favorite Git hosting</li>
-       <li>Deploy via <code>symfony deploy</code></li>
-   </ol>
-  </p>
 
 With your application now deployed on Platform.sh, things get more interesting.
 Run the command `platform environment:branch new-feature` for your project, or open a trivial pull request off of your current branch.
