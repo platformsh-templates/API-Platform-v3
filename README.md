@@ -29,7 +29,7 @@
 </a>&nbsp&nbsp
 </p>
 <p align="center">
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=symfonycorp&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=platformsh-templates&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
 </p>
@@ -70,7 +70,7 @@
 ### Quickstart
 
 <p>
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=symfonycorp&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
 </p>
@@ -122,7 +122,7 @@ git clone https://github.com/platformsh-templates/API-Platform-v3.git
 
 If you're trying to deploy from GitHub, you can generate a copy of this repository first in your own namespace by clicking the [Use this template](https://github.com/platformsh-templates/API-Platform-v3/generate) button at the top of this page.
 
-Then you can clone a copy of it locally with `git clone git@github.com:YOUR_NAMESPACE/platformsh-symfony-template.git`.
+Then you can clone a copy of it locally with `git clone git@github.com:YOUR_NAMESPACE/API-Platform-v3.git`.
 
 
 <details>
@@ -333,7 +333,7 @@ In general, the steps are as follows:
 
    1. check that your api/.env file contains a valid `DATABASE_URL` to let Symfony connect to your database
 
-   1. `symfony console doctrine:schema:create --dump-sql` (change to option `--force` to run those sql request)
+   1. `symfony console doctrine:schema:create --dump-sql` (change to option `--force` to run those sql requests)
 
    1. `symfony server:start -d`
 
