@@ -79,7 +79,7 @@
 
 Clone the GitHub repository and push its content to your Platform.sh project:
 
-```
+```bash
 git clone git@github.com:platformsh-templates/API-Platform-v3.git
 cd platformsh-example-api-platform-reactjs/
 git remote add platform [project-id]@git.[region].platform.sh:[project-id].git
@@ -104,7 +104,7 @@ This will automatically create a new project and initialize the repository for y
 TODO You can also quickly recreate this project locally with the following command:
 
 ```bash
-# composer create-project platformsh-templates/API-Platform-v3:main -s dev
+composer create-project platformsh-templates/API-Platform-v3:main -s dev
 ```
 
 
