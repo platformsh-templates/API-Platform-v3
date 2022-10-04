@@ -6,7 +6,7 @@
 </a>
 </p>
 
-<h1 align="center">Deploy API Platform api and API Platform admin (React) on Platform.sh</h1>
+<h1 align="center">Deploy API Platform api and API Platform admin (ReactJS) on Platform.sh</h1>
 
 <p align="center">
 <strong>Contribute, request a feature, or check out our resources</strong>
@@ -15,21 +15,21 @@
 <a href="https://community.platform.sh"><strong>Join our community</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://docs.platform.sh"><strong>Documentation</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://platform.sh/blog"><strong>Blog</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="https://github.com/flovntp/api-platform-sh/issues/new?assignees=&labels=bug&template=bug_report.yml"><strong>Report a bug</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="https://github.com/flovntp/api-platform-sh/issues/new?assignees=&labels=feature+request&template=improvements.yml"><strong>Request a feature</strong></a>
+<a href="https://github.com/platformsh-templates/API-Platform-v3/issues/new?assignees=&labels=bug&template=bug_report.yml"><strong>Report a bug</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="https://github.com/platformsh-templates/API-Platform-v3/issues/new?assignees=&labels=feature+request&template=improvements.yml"><strong>Request a feature</strong></a>
 <br /><br />
 </p>
 
 <p align="center">
-<a href="https://github.com/flovntp/api-platform-sh/issues">
-<img src="https://img.shields.io/github/issues/flovntp/api-platform-sh.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Issues" alt="Open issues" />
+<a href="https://github.com/platformsh-templates/API-Platform-v3/issues">
+<img src="https://img.shields.io/github/issues/platformsh-templates/API-Platform-v3.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Issues" alt="Open issues" />
 </a>&nbsp&nbsp
-<a href="https://github.com/flovntp/api-platform-sh/pulls">
-<img src="https://img.shields.io/github/issues-pr/flovntp/api-platform-sh.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Pull%20requests" alt="Open PRs" />
+<a href="https://github.com/platformsh-templates/API-Platform-v3/pulls">
+<img src="https://img.shields.io/github/issues-pr/platformsh-templates/API-Platform-v3.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Pull%20requests" alt="Open PRs" />
 </a>&nbsp&nbsp
 </p>
 <p align="center">
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/flovntp/api-platform-sh/main/.platform/metadata/api-platform-php8.1.template.yaml&utm_content=symfonycorp&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=symfonycorp&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
 </p>
@@ -103,11 +103,11 @@
 
 ###Features
 - PHP 8.1
-- PostgreSQL 13
+- PostgreSQL v13
 - Composer-based build
-- Yarn 1.22.15
-- NodeJS 16
-- a sample Greeting Entity 
+- Yarn v1.22.15
+- NodeJS v16
+- a sample Product and Offer Entities
 
 ## Getting started
 
@@ -116,7 +116,7 @@
 ### Quickstart
 
 <p>
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/flovntp/api-platform-sh/main/.platform/metadata/api-platform-php8.1.template.yaml&utm_content=symfonycorp&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=symfonycorp&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
 </p>
@@ -126,34 +126,31 @@
 Clone the GitHub repository and push its content to your Platform.sh project:
 
 ```
-git clone git@github.com:platformsh/platformsh-example-api-platform-reactjs.git
+git clone git@github.com:platformsh-templates/API-Platform-v3.git
 cd platformsh-example-api-platform-reactjs/
 git remote add platform [project-id]@git.[region].platform.sh:[project-id].git
 git push platform main
 ```
 
-SSH to the `api` remote application and create the database schema:
+[comment]: <> (SSH to the `api` remote application and create the database schema:)
 
-```
-ssh [project-id]-master-[string-identifier]--api@ssh.[region].platform.sh
-php bin/console doctrine:schema:create
-```
+[comment]: <> (```)
+
+[comment]: <> (ssh [project-id]-master-[string-identifier]--api@ssh.[region].platform.sh)
+
+[comment]: <> (php bin/console doctrine:schema:create)
+
+[comment]: <> (```)
 
 You can now access the `admin` URL provided by Platform.sh and enjoy.
-
-
-
 
 The quickest way to deploy this template on Platform.sh is by clicking the button below.
 This will automatically create a new project and initialize the repository for you.
 
-
-
-
 TODO You can also quickly recreate this project locally with the following command:
 
 ```bash
-# composer create-project flovntp/api-platform-sh:main -s dev
+# composer create-project platformsh-templates/API-Platform-v3:main -s dev
 ```
 
 
@@ -163,15 +160,15 @@ TODO You can also quickly recreate this project locally with the following comma
 
 #### Other deployment options
 
-For all of the other options below, clone this repository first:
+For all the other options below, clone this repository first:
 
 ```bash
-git clone https://github.com/flovntp/api-platform-sh.git
+git clone https://github.com/platformsh-templates/API-Platform-v3.git
 ```
 
-If you're trying to deploy from GitHub, you can generate a copy of this repository first in your own namespace by clicking the [Use this template](https://github.com/flovntp/api-platform-sh/generate) button at the top of this page.
+If you're trying to deploy from GitHub, you can generate a copy of this repository first in your own namespace by clicking the [Use this template](https://github.com/platformsh-templates/API-Platform-v3/generate) button at the top of this page.
 
-Then you can clone a copy of it locally with `TODO git clone git@github.com:YOUR_NAMESPACE/platformsh-symfony-template.git`.
+Then you can clone a copy of it locally with `git clone git@github.com:YOUR_NAMESPACE/platformsh-symfony-template.git`.
 
 
 <details>
@@ -340,110 +337,71 @@ Then you can clone a copy of it locally with `TODO git clone git@github.com:YOUR
 
 
 
- 
 
 
-[comment]: <> (### Local development)
+### Local development
 
-[comment]: <> (This section provides instructions for running the `Symfony` template locally, connected to a live database instance on an active Platform.sh environment.)
+This section provides instructions for running the `API Platform` template locally, connected to a local database instance.
 
-[comment]: <> (In all cases for developing with Platform.sh, it's important to develop on an isolated environment - do not connect to data on your production environment when developing locally.)
+In all cases for developing with Platform.sh, it's important to develop on an isolated environment - do not connect to data on your production environment when developing locally.
 
-[comment]: <> (Each of the options below assume that you have already deployed this template to Platform.sh, as well as the following starting commands:)
+Each of the options below assume that you have already deployed this template to Platform.sh, as well as the following starting commands:
 
-[comment]: <> (```bash)
+```bash
 
-[comment]: <> ($ platform get PROJECT_ID)
+$ platform get PROJECT_ID
 
-[comment]: <> ($ cd project-name)
+$ cd project-name
 
-[comment]: <> ($ platform environment:branch updates)
+$ platform environment:branch new_branch
 
-[comment]: <> (```)
+```
 
-[comment]: <> (<details>)
+<details>
 
-[comment]: <> (<summary>Symfony: using Symfony Server</summary><br />)
+<summary>API Platform: using Symfony Server</summary>
+In general, the steps are as follows:
 
-[comment]: <> (Please follow steps described <a href="https://symfony.com/doc/current/setup/symfony_server.html">in the doc</a>)
+1. if you didn't get your Platform project yet, `git clone git@github.com:platformsh-templates/api-platform-api-admin.git api-platform`
+   (or your own repo if you already created a fork)
 
-[comment]: <> (</details>)
+2. `cd ./api-platform`
 
-[comment]: <> (<details>)
+3. Start the API component with those steps:
 
-[comment]: <> (<summary>Symfony: using ddev</summary><br />)
+   1. `cd ./api`
 
-[comment]: <> (ddev provides an integration with Platform.sh that makes it simple to develop Drupal locally. Check the [providers documentation]&#40;https://ddev.readthedocs.io/en/latest/users/providers/platform/&#41; for the most up-to-date information.)
+   1. Install the <a href="https://symfony.com/download" target="_blank">Symfony CLI</a>
 
-[comment]: <> (In general, the steps are as follows:)
+   1. start docker container for the database : `docker-compose up -d`
 
-[comment]: <> (1. [Install ddev]&#40;https://ddev.readthedocs.io/en/stable/#installation&#41;.)
+   1. `symfony composer install`
 
-[comment]: <> (1. A configuration file has already been provided at `.ddev/providers/platform.yaml`, so you should not need to run `ddev config`.)
+   1. check that your api/.env file contains a valid `DATABASE_URL` to let Symfony connect to your database
 
-[comment]: <> (1. [Retrieve an API token]&#40;https://docs.platform.sh/development/cli/api-tokens.html#get-a-token&#41; for your organization via the management console.)
+   1. `symfony console doctrine:schema:create --dump-sql` (change to option `--force` to run those sql request)
 
-[comment]: <> (1. Update your dedev global configuration file to use the token you've just retrieved:)
+   1. `symfony server:start -d`
 
-[comment]: <> (    ```yaml)
+   1. et voilà, you can go on `<generatedUrlFromSymfonyServerStartCommand>/api` to display your swagger interface, showing entities Offer and Product CRUD option
 
-[comment]: <> (    web_environment:)
+> **Note:**
+> if symfony server does not start your app using default port 8000, please change `REACT_APP_PUBLIC_URL` from `./admin/.env` file accordingly
 
-[comment]: <> (    - PLATFORMSH_CLI_TOKEN=abcdeyourtoken`)
+3. Start the admin component with those steps
 
-[comment]: <> (    ```)
+   1. `cd ../admin` (assuming that you're in the `./api` folder)
 
-[comment]: <> (1. Run `ddev restart`.)
+   1. `yarn install`
 
-[comment]: <> (1. Get your project ID with `platform project:info`. If you have not already connected your local repo with the project &#40;as is the case with a source integration, by default&#41;, you can run `platform project:list` to locate the project ID, and `platform project:set-remote PROJECT_ID` to configure Platform.sh locally.)
+   1. `yarn start`
 
-[comment]: <> (1. Update the `.ddev/providers/platform.yaml` file for your current setup:)
+   1. et voilà, a new browser tab would open at url <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>
 
-[comment]: <> (    ```yaml)
+</details>
 
-[comment]: <> (    environment_variables:)
-
-[comment]: <> (    project_id: PROJECT_ID)
-
-[comment]: <> (    environment: CURRENT_ENVIRONMENT)
-
-[comment]: <> (    application: mySymfonyApp)
-
-[comment]: <> (    ```)
-
-[comment]: <> (1. Get the current environment's data with `ddev pull platform`.)
-
-[comment]: <> (1. When you have finished with your work, run `ddev stop` and `ddev poweroff`.)
-
-[comment]: <> (</details>)
-
-[comment]: <> (<details>)
-
-[comment]: <> (<summary>Symfony: using Lando</summary><br />)
-
-[comment]: <> (Lando supports PHP applications [configured to run on Platform.sh]&#40;https://docs.platform.sh/development/local/lando.html&#41;, and pulls from the same container registry Platform.sh uses on your remote environments during your local builds through its own [recipe and plugin]&#40;https://docs.lando.dev/platformsh/&#41;.)
-
-[comment]: <> (1. [Install Lando]&#40;https://docs.lando.dev/getting-started/installation.html&#41;.)
-
-[comment]: <> (1. Make sure Docker is already running - Lando will attempt to start Docker for you, but it's best to have it running in the background before beginning.)
-
-[comment]: <> (1. Start your apps and services with the command `lando start`.)
-
-[comment]: <> (1. To get up-to-date data from your Platform.sh environment &#40;[services *and* mounts]&#40;https://docs.lando.dev/platformsh/sync.html#pulling&#41;&#41;, run the command `lando pull`.)
-
-[comment]: <> (1. If at any time you have updated your Platform.sh configuration files, run the command `lando rebuild`.)
-
-[comment]: <> (1. When you have finished with your work, run `lando stop` and `lando poweroff`.)
-
-[comment]: <> (</details>)
-
-[comment]: <> (> **Note:**)
-
-[comment]: <> (>)
-
-[comment]: <> (> For many of the steps above, you may need to include the CLI flags `-p PROJECT_ID` and `-e ENVIRONMENT_ID` if you are not in the project directory or if the environment is associated with an existing pull request.)
-
-
+> **Note:**
+> For many of the steps above, you may need to include the CLI flags `-p PROJECT_ID` and `-e ENVIRONMENT_ID` if you are not in the project directory or if the environment is associated with an existing pull request.
 ### Deploying to Platform.sh
 
 This repository has all of the code it needs in order to deploy to Platform.sh.
@@ -489,10 +447,16 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
 
    Then from within your local copy, run the command `platform project:set-remote PROJECT_ID`.
 
-1. Push
+1. Push using git
 
    ```bash
    git push platform DEFAULT_BRANCH
+   ```
+
+1. or Push using platform
+
+   ```bash
+   platform push
    ```
 
 <!-- <br/>
@@ -611,7 +575,6 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
 
 ### Migrating your data
 
-
 If you are moving an existing site to Platform.sh, then in addition to code you also need to migrate your data. That means your database and your files.
 
 <details>
@@ -657,7 +620,6 @@ Note that `rsync` is picky about its trailing slashes, so be sure to include tho
        <li>Deploy via <code>symfony deploy</code></li>
    </ol>
   </p>
-
 
 With your application now deployed on Platform.sh, things get more interesting.
 Run the command `platform environment:branch new-feature` for your project, or open a trivial pull request off of your current branch.
@@ -726,9 +688,8 @@ This template includes a starting [`.blackfire.yml`](.blackfire.yml) file that c
 ### Resources
 
 
-- [API Platform](https://www.drupal.org/)
+- [API Platform](https://api-platform.com/)
 
-[comment]: <> (TODO - [Drupal 9 on Platform.sh]&#40;https://docs.platform.sh/guides/drupal9/deploy.html&#41;)
 - [Platform.sh PHP documentation](https://docs.platform.sh/languages/php.html)
 
 
@@ -788,9 +749,9 @@ See something that's wrong with this template that needs to be fixed? Something 
 <p align="center">
 <strong>How to contribute</strong>
 <br /><br />
-<a href="https://github.com/flovntp/api-platform-sh/issues/new?assignees=&labels=bug&template=bug_report.yml"><strong>Report a bug</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="https://github.com/flovntp/api-platform-sh/issues/new?assignees=&labels=feature+request&template=improvements.yml"><strong>Submit a feature request</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="https://github.com/flovntp/api-platform-sh/pulls"><strong>Open a pull request</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="https://github.com/platformsh-templates/API-Platform-v3/issues/new?assignees=&labels=bug&template=bug_report.yml"><strong>Report a bug</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="https://github.com/platformsh-templates/API-Platform-v3/issues/new?assignees=&labels=feature+request&template=improvements.yml"><strong>Submit a feature request</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="https://github.com/platformsh-templates/API-Platform-v3/pulls"><strong>Open a pull request</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <br />
 </p>
 <br />
@@ -805,8 +766,8 @@ See something that's wrong with this template that needs to be fixed? Something 
 <h3 align="center"><strong>Thanks to all of our amazing contributors!</strong></h3>
 <br/>
 <p align="center">
-<a href="https://github.com/flovntp/api-platform-sh/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=flovntp/api-platform-sh" />
+<a href="https://github.com/platformsh-templates/API-Platform-v3/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=platformsh-templates/API-Platform-v3" />
 </a>
 </p>
 
