@@ -55,7 +55,7 @@
    <BR>The generated code has been optimized for a typical web application hosted on <a href="https://platform.sh/">Platform.sh</a>.
 </p>
 
-###Features
+### Features
 - PHP 8.1
 - PostgreSQL v13
 - Composer-based build
