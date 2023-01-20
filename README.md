@@ -65,235 +65,22 @@
 
 ## Getting started
 
-[comment]: <> (### Deploy)
 
 ### Quickstart
 
+The quickest way to deploy this template on Platform.sh is by clicking the button below.<br>
+This will automatically create a new project and initialize the repository for you.
+
 <p>
+
 <a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-php8.1.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
 </p>
 
-[Create a Platform.sh project](https://platform.sh/free-trial).
-
-Clone the GitHub repository and push its content to your Platform.sh project:
-
-```bash
-git clone git@github.com:platformsh-templates/API-Platform-v3.git
-cd API-Platform-v3/
-git remote add platform [project-id]@git.[region].platform.sh:[project-id].git
-git push platform main
-```
-
-[comment]: <> (SSH to the `api` remote application and create the database schema:)
-
-[comment]: <> (```)
-
-[comment]: <> (ssh [project-id]-master-[string-identifier]--api@ssh.[region].platform.sh)
-
-[comment]: <> (php bin/console doctrine:schema:create)
-
-[comment]: <> (```)
-
-You can now access the `admin` URL provided by Platform.sh and enjoy.
-
-The quickest way to deploy this template on Platform.sh is by clicking the button below.
-This will automatically create a new project and initialize the repository for you.
-
-[comment]: <> (TODO You can also quickly recreate this project locally with the following command:)
-
-[comment]: <> (```bash)
-
-[comment]: <> (composer create-project platformsh-templates/API-Platform-v3:main -s dev)
-
-[comment]: <> (```)
-
-
 > **Note:**
 >
 > Platform.sh templates prioritize upstream release versions over our own. Despite this, we update template dependencies on a scheduled basis independent of those upstreams. <br>Because of this, template repos do not contain releases. This may change in the future, but until then the `-s dev` flag is necessary to use `composer create-project`.
-
-#### Other deployment options
-
-For all the other options below, clone this repository first:
-
-```bash
-git clone https://github.com/platformsh-templates/API-Platform-v3.git
-```
-
-If you're trying to deploy from GitHub, you can generate a copy of this repository first in your own namespace by clicking the [Use this template](https://github.com/platformsh-templates/API-Platform-v3/generate) button at the top of this page.
-
-Then you can clone a copy of it locally with `git clone git@github.com:YOUR_NAMESPACE/API-Platform-v3.git`.
-
-
-<details>
-<summary>Deploy directly to Platform.sh from the command line</summary>
-<!-- <blockquote>
-<br/> -->
-
-1. Create a free trial:
-
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
-
-1. Install the Platform.sh CLI
-
-   #### Linux/OSX
-
-   ```bash
-   curl -sS https://platform.sh/cli/installer | php
-   ```
-
-   #### Windows
-
-   ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
-   ```
-
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
-
-1. Set the project remote
-
-   Find your `PROJECT_ID` by running the command `platform project:list`
-
-   ```bash
-   +---------------+------------------------------------+------------------+---------------------------------+
-   | ID            | Title                              | Region           | Organization                    |
-   +---------------+------------------------------------+------------------+---------------------------------+
-   | PROJECT_ID    | Your Project Name                  | xx-5.platform.sh | your-username                   |
-   +---------------+------------------------------------+------------------+---------------------------------+
-   ```
-
-   Then from within your local copy, run the command `platform project:set-remote PROJECT_ID`.
-
-1. Push
-
-   ```bash
-   git push platform DEFAULT_BRANCH
-   ```
-
-<!-- <br/>
-</blockquote> -->
-</details>
-
-<details>
-<summary>Integrate with a GitHub repo and deploy pull requests</summary>
-<!-- <blockquote>
-<br/> -->
-
-1. Create a free trial:
-
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to whatever you have set at `https://YOUR_NAMESPACE/nextjs-drupal`.
-
-1. Install the Platform.sh CLI
-
-   #### Linux/OSX
-
-   ```bash
-   curl -sS https://platform.sh/cli/installer | php
-   ```
-
-   #### Windows
-
-   ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
-   ```
-
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
-
-1. Setup the integration:
-
-   Consult the [GitHub integration documentation](https://docs.platform.sh/integrations/source/github.html#setup) to finish connecting your repository to a project on Platform.sh. You will need to create an Access token on GitHub to do so.
-
-<!-- <br/>
-</blockquote> -->
-</details>
-
-<details>
-<summary>Integrate with a GitLab repo and deploy merge requests</summary>
-<!-- <blockquote>
-<br/> -->
-
-1. Create a free trial:
-
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
-
-1. Install the Platform.sh CLI
-
-   #### Linux/OSX
-
-   ```bash
-   curl -sS https://platform.sh/cli/installer | php
-   ```
-
-   #### Windows
-
-   ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
-   ```
-
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
-
-1. Create the repository
-
-   Create a new repository on GitLab, set it as a new remote for your local copy, and push to the default branch.
-
-1. Setup the integration:
-
-   Consult the [GitLab integration documentation](https://docs.platform.sh/integrations/source/gitlab.html#setup) to finish connecting a repository to a project on Platform.sh. You will need to create an Access token on GitLab to do so.
-
-<!-- <br/>
-</blockquote> -->
-</details>
-
-<details>
-<summary>Integrate with a Bitbucket repo and deploy pull requests</summary>
-<!-- <blockquote>
-<br/> -->
-
-1. Create a free trial:
-
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
-
-1. Install the Platform.sh CLI
-
-   #### Linux/OSX
-
-   ```bash
-   curl -sS https://platform.sh/cli/installer | php
-   ```
-
-   #### Windows
-
-   ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
-   ```
-
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
-
-1. Create the repository
-
-   Create a new repository on Bitbucket, set it as a new remote for your local copy, and push to the default branch.
-
-1. Setup the integration:
-
-   Consult the [Bitbucket integration documentation](https://docs.platform.sh/integrations/source/bitbucket.html#setup) to finish connecting a repository to a project on Platform.sh. You will need to create an Access token on Bitbucket to do so.
-
-<!-- <br/>
-</blockquote> -->
-</details>
-
-[comment]: <> (### Post-install)
-
-[comment]: <> (Run through the Symfony installer as normal.  You will not be asked for database credentials as those are already provided.)
-
-
-
-
 
 ### Local development
 
@@ -303,27 +90,40 @@ In all cases for developing with Platform.sh, it's important to develop on an is
 
 Each of the options below assume that you have already deployed this template to Platform.sh, as well as the following starting commands:
 
-```bash
 
-$ platform get PROJECT_ID
 
-$ cd project-name
+1. Install the Platform.sh CLI
 
-$ platform environment:branch new_branch
+   #### Linux/OSX
 
-```
+   ```bash
+   brew install platformsh/tap/platformsh-cli
+   ```
 
-<details>
+   #### Windows
 
-<summary>API Platform: using Symfony Server</summary>
-In general, the steps are as follows:
+   ```bash
+   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
+   scoop install platform
+   ```
 
-1. if you didn't get your Platform project yet, `git clone git@github.com:platformsh-templates/api-platform-api-admin.git api-platform`
-   (or your own repo if you already created a fork)
+   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
 
-2. `cd ./api-platform`
+1. Find your `PROJECT_ID` by running the command `platform project:list`
 
-3. Start the API component with those steps:
+   ```bash
+   +---------------+------------------------------------+------------------+---------------------------------+
+   | ID            | Title                              | Region           | Organization                    |
+   +---------------+------------------------------------+------------------+---------------------------------+
+   | PROJECT_ID    | Your Project Name                  | xx-3.platform.sh | your-username                   |
+   +---------------+------------------------------------+------------------+---------------------------------+
+   ```
+1. Get your Platform.sh project
+   ```
+   platform get PROJECT_ID
+   cd project-name
+   ```
+1. Start the API component with these steps:
 
    1. `cd ./api`
 
@@ -341,27 +141,38 @@ In general, the steps are as follows:
 
    1. et voilà, you can go on `<generatedUrlFromSymfonyServerStartCommand>/api` to display your swagger interface, showing entities Offer and Product CRUD option
 
-> **Note:**
-> if symfony server does not start your app using default port 8000, please change `REACT_APP_PUBLIC_URL` from `./admin/.env` file accordingly
+   > **Note:**
+   > if symfony server does not start your app using default port 8000, please change `REACT_APP_PUBLIC_URL` from `./admin/.env` file accordingly
 
-3. Start the admin component with those steps
+1. Start the ADMIN component with these steps
 
-   1. `cd ../admin` (assuming that you're in the `./api` folder)
+   1. `cd ../admin` (assuming that you were in the `./api` folder)
 
    1. `yarn install`
 
    1. `yarn start`
 
-   1. et voilà, a new browser tab would open at url <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>
+   1. et voilà, a new browser tab would open at url <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>   
 
-</details>
-
+1. Create a new branch
+   ```
+   platform branch new_branch
+   ```
+1. Develop your feature and commit it in GIT
+1. Push your code to your environment
+   ```
+   platform push
+   ```
+1. Push to production
+   ```
+   platform checkout main
+   platform merge new_branch
+   ```
 > **Note:**
 > For many of the steps above, you may need to include the CLI flags `-p PROJECT_ID` and `-e ENVIRONMENT_ID` if you are not in the project directory or if the environment is associated with an existing pull request.
 ### Deploying to Platform.sh
 
-This repository has all of the code it needs in order to deploy to Platform.sh.
-
+This repository has all the code it needs in order to deploy to Platform.sh.
 
 <details>
 <summary>Deploy directly to Platform.sh from the command line</summary>
@@ -377,14 +188,14 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
    #### Linux/OSX
 
    ```bash
-   curl -sS https://platform.sh/cli/installer | php
+   brew install platformsh/tap/platformsh-cli
    ```
 
    #### Windows
 
    ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
+   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
+   scoop install platform
    ```
 
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
@@ -409,7 +220,7 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
    git push platform DEFAULT_BRANCH
    ```
 
-1. or Push using platform
+1. or Push using platform CLI
 
    ```bash
    platform push
@@ -433,14 +244,14 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
    #### Linux/OSX
 
    ```bash
-   curl -sS https://platform.sh/cli/installer | php
+   brew install platformsh/tap/platformsh-cli
    ```
 
    #### Windows
 
    ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
+   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
+   scoop install platform
    ```
 
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
@@ -449,6 +260,7 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
 
    Consult the [GitHub integration documentation](https://docs.platform.sh/integrations/source/github.html#setup) to finish connecting your repository to a project on Platform.sh. You will need to create an Access token on GitHub to do so.
 
+1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Platform.sh environment
 <!-- <br/>
 </blockquote> -->
 </details>
@@ -465,16 +277,16 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
 1. Install the Platform.sh CLI
 
    #### Linux/OSX
-
+   
    ```bash
-   curl -sS https://platform.sh/cli/installer | php
+   brew install platformsh/tap/platformsh-cli
    ```
 
    #### Windows
 
    ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
+   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
+   scoop install platform
    ```
 
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
@@ -486,6 +298,7 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
 1. Setup the integration:
 
    Consult the [GitLab integration documentation](https://docs.platform.sh/integrations/source/gitlab.html#setup) to finish connecting a repository to a project on Platform.sh. You will need to create an Access token on GitLab to do so.
+1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Platform.sh environment
 
 <!-- <br/>
 </blockquote> -->
@@ -505,14 +318,14 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
    #### Linux/OSX
 
    ```bash
-   curl -sS https://platform.sh/cli/installer | php
+   brew install platformsh/tap/platformsh-cli
    ```
 
    #### Windows
 
    ```bash
-   curl -f https://platform.sh/cli/installer -o cli-installer.php
-   php cli-installer.php
+   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
+   scoop install platform
    ```
 
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
@@ -524,6 +337,7 @@ This repository has all of the code it needs in order to deploy to Platform.sh.
 1. Setup the integration:
 
    Consult the [Bitbucket integration documentation](https://docs.platform.sh/integrations/source/bitbucket.html#setup) to finish connecting a repository to a project on Platform.sh. You will need to create an Access token on Bitbucket to do so.
+1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Platform.sh environment
 
 <!-- <br/>
 </blockquote> -->
@@ -557,8 +371,8 @@ Run the following from your local Git repository root (modifying the `--source` 
 A few examples are listed below, but repeat for all directories that contain data you would like to migrate.
 
 ```bash
-$ platform mount:upload -e main --mount web/sites/default/files --source ./web/sites/default/files
-$ platform mount:upload -e main --mount private --source ./private
+platform mount:upload -e main --mount web/sites/default/files --source ./web/sites/default/files
+platform mount:upload -e main --mount private --source ./private
 ```
 
 Note that `rsync` is picky about its trailing slashes, so be sure to include those.
@@ -568,7 +382,7 @@ Note that `rsync` is picky about its trailing slashes, so be sure to include tho
 With your application now deployed on Platform.sh, things get more interesting.
 Run the command `platform environment:branch new-feature` for your project, or open a trivial pull request off of your current branch.
 
-The resulting environment is an *exact* copy of production.
+The resulting environment is an *exact* copy of production (or corresponding parent environment).
 It contains identical infrastructure to what's been defined in your configuration files, and even includes data copied from your production environment in its services.
 On this isolated environment, you're free to make any changes to your application you need to, and really test how they will behave on production.
 
@@ -611,7 +425,7 @@ To fix, SSH into the application container (`platform ssh`) and rebuild the cach
 
 ```bash
 php bin/console cache:clear
-php bin/console cache:pool:clear cache.redis
+php bin/console cache:pool:clear cache.app
 ```
 </details>
 
@@ -682,7 +496,7 @@ To find out more, check out the demo below and go to our [website](https://platf
 
 </details>
 
-## Contribute
+<h2 align="center">Contribute</h2>
 
 <h3 align="center">Help us keep top-notch templates!</h3>
 
