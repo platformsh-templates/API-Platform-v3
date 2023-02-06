@@ -36,7 +36,7 @@ web:
       start: ./mercure
   locations:
       /mercure:
-          root: "/mercure/public"
+          root: "mercure/public"
           index:
               - "index.html"
           passthru: true
