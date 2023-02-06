@@ -16,13 +16,7 @@ mounts:
 hooks:
     build: |
       ls -la
-#      wget https://github.com/dunglas/mercure/releases/download/v${MERCURE_VERSION}/mercure_${MERCURE_VERSION}_Linux_x86_64.tar.gz
-#      gunzip mercure_${MERCURE_VERSION}_Linux_x86_64.tar.gz
       ./mercure
-#      ls -la
-#      echo mercure_${MERCURE_VERSION}_Linux_x86_64.tar
-#      ls -la mercure_${MERCURE_VERSION}_Linux_x86_64.tar
-#      tar xvf mercure_${MERCURE_VERSION}_Linux_x86_64.tar
     deploy: |
       ./mercure run -config Caddyfile.platform_sh
 web:
