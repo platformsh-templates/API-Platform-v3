@@ -42,6 +42,9 @@ web:
         start: ./mercure run -config Caddyfile.platform_sh
     locations:
         /:
+            root: "public"
+            index:
+              - "index.html"
             allow: true
             passthru: true
             request_buffering:

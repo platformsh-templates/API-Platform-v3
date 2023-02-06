@@ -3,7 +3,7 @@
     {$GLOBAL_OPTIONS}
 }
 
-{$SERVER_NAME:localhost}
+{$SERVER_NAME}
 
 log
 
@@ -28,5 +28,5 @@ route {
 
     respond /healthz 200
 
-    respond "Not Found" 404
+    #respond "Not Found" 404
 }
