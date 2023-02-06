@@ -19,7 +19,9 @@ https://{default}/api:
   upstream: "api:http"
   id: api
 
-https://{default}/mercure:
+https://mercure.{default}/:
   type: upstream
   upstream: "mercure:http"
   id: mercure
+  cache:
+    enabled: false
