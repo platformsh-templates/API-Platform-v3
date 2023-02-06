@@ -16,9 +16,9 @@ mounts:
 hooks:
     build: |
       ls -la
-      ./mercure
+      corepack ./mercure
     deploy: |
-      ./mercure run -config Caddyfile.platform_sh
+      corepack ./mercure run -config Caddyfile.platform_sh
 web:
 #    commands:
 #        start: ./mercure run -config Caddyfile.platform_sh
