@@ -15,6 +15,7 @@ mounts:
     source_path: db
 hooks:
     build: |
+      ls -la 
 #      wget https://github.com/dunglas/mercure/releases/download/v${MERCURE_VERSION}/mercure_${MERCURE_VERSION}_Linux_x86_64.tar.gz
 #      gunzip mercure_${MERCURE_VERSION}_Linux_x86_64.tar.gz
 #      ./mercure
