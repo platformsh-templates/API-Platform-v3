@@ -11,13 +11,15 @@ hooks:
       URL="https://github.com/dunglas/mercure/releases/download/v${MERCUREVERSION}/$FILE"
       if [ ! -f "$PLATFORM_CACHE_DIR/$FILE" ]; then
       echo "Downloading $URL"
+          echo $($PLATFORM_CACHE_DIR/$FILE)
           wget -O "$PLATFORM_CACHE_DIR/$FILE" $URL
       else
           echo "Found $FILE in cache, using cache"
       fi
+      pwd
+      ls -la /mnt
       file $PLATFORM_CACHE_DIR/$FILE
       tar xvzf $PLATFORM_CACHE_DIR/$FILE
-      echo $($PLATFORM_CACHE_DIR/$FILE)
   post_deploy: echo  "Your JWT_KEY is $JWT_KEY"
 variables:
   env:
