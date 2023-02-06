@@ -1,7 +1,7 @@
 name: mercure
 type: golang:1.18
 source:
-    root: .platform/mercure
+    root: mercure/mercure
 variables:
   env:
     SERVER_NAME: ":8888"
