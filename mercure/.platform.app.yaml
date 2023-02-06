@@ -16,12 +16,12 @@ mounts:
 hooks:
     build: |
       ls -la
-      corepack ./mercure
+#      corepack ./mercure
     deploy: |
-      corepack ./mercure run -config Caddyfile.platform_sh
+#      corepack ./mercure run -config Caddyfile.platform_sh
 web:
-#    commands:
-#        start: ./mercure run -config Caddyfile.platform_sh
+    commands:
+        start: ./mercure run -config Caddyfile.platform_sh
     locations:
         /:
             allow: true
