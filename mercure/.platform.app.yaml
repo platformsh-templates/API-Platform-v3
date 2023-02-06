@@ -26,7 +26,7 @@ variables:
       KAFKA_CONSUMER_GROUP: any
       ADDR: "localhost:8888"
       JWT_KEY: "!ChangeMe!"
-      TRANSPORT_URL: "bolt:///mercure/database/database.db"
+      TRANSPORT_URL: "bolt:///app/database/database.db"
 mounts:
   "database":
       source: local
