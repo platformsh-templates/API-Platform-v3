@@ -23,10 +23,11 @@ hooks:
 #      echo mercure_${MERCURE_VERSION}_Linux_x86_64.tar
 #      ls -la mercure_${MERCURE_VERSION}_Linux_x86_64.tar
 #      tar xvf mercure_${MERCURE_VERSION}_Linux_x86_64.tar
-
+    deploy: |
+      ./mercure run -config Caddyfile.platform_sh
 web:
-    commands:
-        start: ./mercure run -config Caddyfile.platform_sh
+#    commands:
+#        start: ./mercure run -config Caddyfile.platform_sh
     locations:
         /:
             allow: true
