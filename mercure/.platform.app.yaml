@@ -18,12 +18,13 @@ hooks:
       wget https://github.com/dunglas/mercure/releases/download/v${MERCURE_VERSION}/mercure_${MERCURE_VERSION}_Linux_x86_64.tar.gz
       gunzip mercure_${MERCURE_VERSION}_Linux_x86_64.tar.gz
       tar xvf mercure_${MERCURE_VERSION}_Linux_x86_64.tar
+
 web:
     commands:
         start: ./mercure run -config Caddyfile.platform_sh
     locations:
         /:
-            allow: false
+            allow: true
             passthru: true
             request_buffering:
               enabled: false
