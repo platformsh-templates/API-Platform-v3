@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity]
-#[ApiResource]
+#[ApiResource(mercure: true)]
 class Product // The class name will be used to name exposed resources
 {
     #[ORM\Id, ORM\Column, ORM\GeneratedValue]

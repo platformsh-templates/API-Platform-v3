@@ -135,7 +135,7 @@ Each of the options below assume that you have already deployed this template to
 
    1. check that your api/.env file contains a valid `DATABASE_URL` to let Symfony connect to your database
 
-   1. `symfony console doctrine:schema:create --dump-sql` (change to option `--force` to run those sql requests)
+   1. `symfony console doctrine:schema:create --dump-sql`
 
    1. `symfony server:start -d`
 
@@ -315,20 +315,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Install the Platform.sh CLI
 
-   #### Linux/OSX
-
-   ```bash
-   brew install platformsh/tap/platformsh-cli
-   ```
-
-   #### Windows
-
-   ```bash
-   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
-   scoop install platform
-   ```
-
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
+Follow the instructions to install the Platform.sh CLI for your operating system. You can verify the installation by logging in (platformsh login) and listing your projects (platform project:list).
 
 1. Create the repository
 

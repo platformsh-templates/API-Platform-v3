@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  */
 #[ORM\Entity]
-#[ApiResource(types: ['https://schema.org/Offer'])]
+#[ApiResource(types: ['https://schema.org/Offer'], mercure: true)]
 class Offer
 {
     #[ORM\Id, ORM\Column, ORM\GeneratedValue]
