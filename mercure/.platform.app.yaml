@@ -9,7 +9,7 @@ variables:
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origins {$PSH_SITE_URL}
       publish_origins {$PSH_SITE_URL}
-      anonymous true
+      ui true
     GLOBAL_OPTIONS: |
       auto_https off
     MERCURE_VERSION: "0.14.0"
@@ -25,7 +25,7 @@ mounts:
 hooks:
     build: |
       #Install Mercure using cache
-      MERCUREVERSION=0.13.0
+      MERCUREVERSION=0.14.4
       FILE="mercure_${MERCUREVERSION}_Linux_x86_64.tar.gz"
       if [ ! -f "$PLATFORM_CACHE_DIR/$FILE" ]; then
         URL="https://github.com/dunglas/mercure/releases/download/v${MERCUREVERSION}/$FILE"
