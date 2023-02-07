@@ -9,6 +9,7 @@ variables:
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origins {$PSH_SITE_URL}
       publish_origins {$PSH_SITE_URL}
+      anonymous true
     GLOBAL_OPTIONS: |
       auto_https off
     MERCURE_VERSION: "0.14.0"
@@ -42,9 +43,6 @@ web:
         start: ./mercure run -config Caddyfile.platform_sh
     locations:
         /:
-            root: "public"
-            index:
-              - "index.html"
             allow: true
             passthru: true
             request_buffering:
