@@ -4,7 +4,7 @@ source:
     root: mercure/mercure
 variables:
   env:
-    SERVER_NAME: ":8888"
+    SERVER_NAME: ":443"
     MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origins {$PSH_SITE_URL}
