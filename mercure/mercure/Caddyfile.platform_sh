@@ -3,7 +3,7 @@
     {$GLOBAL_OPTIONS}
 }
 
-{$SERVER_NAME:443}
+{$SERVER_NAME:localhost}
 
 log {
    output file /var/log/caddyfile.log
