@@ -40,7 +40,7 @@ hooks:
 #      corepack ./mercure run -config Caddyfile.platform_sh
 web:
     commands:
-        start: ./mercure run -config Caddyfile.platform_sh
+        start: ./mercure run --config Caddyfile.platform_sh
     locations:
         /:
             allow: true
