@@ -1,9 +1,9 @@
 # Learn how to configure the Mercure.rocks Hub on https://mercure.rocks/docs/hub/config
 {
-    {env.GLOBAL_OPTIONS}
+    {$GLOBAL_OPTIONS}
 }
 
-{env.SERVER_NAME:localhost}
+{$SERVER_NAME:localhost}
 
 log {
    output file /var/log/caddyfile.log
@@ -27,7 +27,7 @@ route {
         # Subscriber JWT key
         subscriber_jwt {env.MERCURE_SUBSCRIBER_JWT_KEY} {env.MERCURE_SUBSCRIBER_JWT_ALG}
         # Extra directives
-        {env.MERCURE_EXTRA_DIRECTIVES}
+        {$MERCURE_EXTRA_DIRECTIVES}
     }
 
 	respond / `<!DOCTYPE html>
