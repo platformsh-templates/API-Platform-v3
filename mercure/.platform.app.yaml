@@ -11,11 +11,12 @@ variables:
       cors_origins {$PSH_SITE_URL}
       publish_origins {$PSH_SITE_URL}
       ui true
-#    GLOBAL_OPTIONS: |
-#      auto_https off
+      debug 1
+    GLOBAL_OPTIONS: |
+      auto_https off
     MERCURE_VERSION: "0.14.0"
-    MERCURE_PUBLISHER_JWT_KEY: '!ChangeMe!'
-    MERCURE_SUBSCRIBER_JWT_KEY: '!ChangeMe!'
+#    MERCURE_PUBLISHER_JWT_KEY: '!ChangeMe!'
+#    MERCURE_SUBSCRIBER_JWT_KEY: '!ChangeMe!'
 disk: 1024
 mounts:
   'db':
