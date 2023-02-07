@@ -4,14 +4,15 @@ source:
     root: mercure/mercure
 variables:
   env:
-    SERVER_NAME: ":443"
-    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
+    SERVER_NAME: ":2019"
+#    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
+    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origins {$PSH_SITE_URL}
       publish_origins {$PSH_SITE_URL}
       ui true
-    GLOBAL_OPTIONS: |
-      auto_https off
+#    GLOBAL_OPTIONS: |
+#      auto_https off
     MERCURE_VERSION: "0.14.0"
     MERCURE_PUBLISHER_JWT_KEY: '!ChangeMe!'
     MERCURE_SUBSCRIBER_JWT_KEY: '!ChangeMe!'
@@ -36,8 +37,6 @@ hooks:
       fi
       file $PLATFORM_CACHE_DIR/$FILE
       tar xvzf $PLATFORM_CACHE_DIR/$FILE
-#    deploy: |
-#      corepack ./mercure run -config Caddyfile.platform_sh
 web:
     commands:
         start: ./mercure run --config Caddyfile.platform_sh
