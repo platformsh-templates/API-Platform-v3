@@ -3,7 +3,7 @@
     {$GLOBAL_OPTIONS}
 }
 
-{$SERVER_NAME:localhost}
+{$SERVER_NAME:3000}
 
 log {
    output file /var/log/caddyfile.log
