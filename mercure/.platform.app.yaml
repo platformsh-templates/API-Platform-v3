@@ -5,8 +5,8 @@ source:
 variables:
   env:
     SERVER_NAME: ":2019"
-#    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
-    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
+    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
+#    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origins {$PSH_SITE_URL}
       publish_origins {$PSH_SITE_URL}
