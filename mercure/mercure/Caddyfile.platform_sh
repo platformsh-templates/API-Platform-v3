@@ -3,13 +3,13 @@
     {$GLOBAL_OPTIONS}
 }
 
-{$SERVER_NAME:localhost}
+{$SERVER_NAME:https://mercure.mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site}
 
 log
 
 #cors
-header Access-Control-Allow-Origin {$PSH_SITE_URL}
-header Access-Control-Allow-Credentials true
+#header Access-Control-Allow-Origin {$PSH_SITE_URL}
+#header Access-Control-Allow-Credentials true
 
 route {
     redir / /.well-known/mercure/ui/
