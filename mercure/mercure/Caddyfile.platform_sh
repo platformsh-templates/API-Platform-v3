@@ -19,7 +19,7 @@ route {
 
     mercure {
         # Transport to use (default to Bolt)
-        transport_url {env.MERCURE_TRANSPORT_URL:bolt://mercure.db}
+        transport_url {$MERCURE_TRANSPORT_URL:bolt:///var/run/mercure.db}
         # Publisher JWT key
         publisher_jwt {env.MERCURE_PUBLISHER_JWT_KEY} {env.MERCURE_PUBLISHER_JWT_ALG}
         # Allow anonymous subscribers (double-check that it's what you want)
