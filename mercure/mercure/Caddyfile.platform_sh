@@ -3,7 +3,7 @@
     {$GLOBAL_OPTIONS}
 }
 
-{$SERVER_NAME:https://mercure.mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site}
+{$SERVER_NAME::8080}
 
 log
 
