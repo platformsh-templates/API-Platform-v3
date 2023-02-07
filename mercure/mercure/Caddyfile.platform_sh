@@ -3,7 +3,7 @@
     {$GLOBAL_OPTIONS}
 }
 
-{$SERVER_NAME::8080}
+{$SERVER_NAME:localhost}
 
 log
 
