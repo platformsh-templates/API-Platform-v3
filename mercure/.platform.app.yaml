@@ -4,16 +4,18 @@ source:
     root: mercure/.config
 variables:
   env:
-    SERVER_NAME: ":80"
+    SERVER_NAME: ":2019"
     MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
 #    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
-    PSH_SITE_URL: "https://mercure.mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site"
+    #PSH_SITE_URL: "https://mercure.mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site"
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origins *
       publish_origins *
       demo
       anonymous
       subscriptions
+    GLOBAL_OPTIONS: |
+      auto_https off
     MERCURE_PUBLISHER_JWT_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOlsiKiJdLCJzdWJzY3JpYmUiOlsiaHR0cHM6Ly9leGFtcGxlLmNvbS9teS1wcml2YXRlLXRvcGljIiwie3NjaGVtZX06Ly97K2hvc3R9L2RlbW8vYm9va3Mve2lkfS5qc29ubGQiLCIvLndlbGwta25vd24vbWVyY3VyZS9zdWJzY3JpcHRpb25zey90b3BpY317L3N1YnNjcmliZXJ9Il0sInBheWxvYWQiOnsidXNlciI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXNlcnMvZHVuZ2xhcyIsInJlbW90ZUFkZHIiOiIxMjcuMC4wLjEifX19.KKPIikwUzRuB3DTpVw6ajzwSChwFw5omBMmMcWKiDcM"
     MERCURE_SUBSCRIBER_JWT_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOlsiKiJdLCJzdWJzY3JpYmUiOlsiaHR0cHM6Ly9leGFtcGxlLmNvbS9teS1wcml2YXRlLXRvcGljIiwie3NjaGVtZX06Ly97K2hvc3R9L2RlbW8vYm9va3Mve2lkfS5qc29ubGQiLCIvLndlbGwta25vd24vbWVyY3VyZS9zdWJzY3JpcHRpb25zey90b3BpY317L3N1YnNjcmliZXJ9Il0sInBheWxvYWQiOnsidXNlciI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXNlcnMvZHVuZ2xhcyIsInJlbW90ZUFkZHIiOiIxMjcuMC4wLjEifX19.KKPIikwUzRuB3DTpVw6ajzwSChwFw5omBMmMcWKiDcM"
 disk: 1024
