@@ -4,19 +4,20 @@ source:
     root: mercure/.config
 variables:
   env:
-    SERVER_NAME: ":8888/mercure/"
-    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
+    MERCUREVERSION: 0.14.4
+#    SERVER_NAME: ":8888/mercure/"
+#    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
 #    PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site.*"
-    MERCURE_EXTRA_DIRECTIVES: |
-      cors_origin *
-      publish_origins *
-      demo true
-      anonymous
-      subscriptions
-    GLOBAL_OPTIONS: |
-      auto_https off
-    MERCURE_PUBLISHER_JWT_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOlsiKiJdLCJzdWJzY3JpYmUiOlsiaHR0cHM6Ly9leGFtcGxlLmNvbS9teS1wcml2YXRlLXRvcGljIiwie3NjaGVtZX06Ly97K2hvc3R9L2RlbW8vYm9va3Mve2lkfS5qc29ubGQiLCIvLndlbGwta25vd24vbWVyY3VyZS9zdWJzY3JpcHRpb25zey90b3BpY317L3N1YnNjcmliZXJ9Il0sInBheWxvYWQiOnsidXNlciI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXNlcnMvZHVuZ2xhcyIsInJlbW90ZUFkZHIiOiIxMjcuMC4wLjEifX19.KKPIikwUzRuB3DTpVw6ajzwSChwFw5omBMmMcWKiDcM"
-    MERCURE_SUBSCRIBER_JWT_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOlsiKiJdLCJzdWJzY3JpYmUiOlsiaHR0cHM6Ly9leGFtcGxlLmNvbS9teS1wcml2YXRlLXRvcGljIiwie3NjaGVtZX06Ly97K2hvc3R9L2RlbW8vYm9va3Mve2lkfS5qc29ubGQiLCIvLndlbGwta25vd24vbWVyY3VyZS9zdWJzY3JpcHRpb25zey90b3BpY317L3N1YnNjcmliZXJ9Il0sInBheWxvYWQiOnsidXNlciI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXNlcnMvZHVuZ2xhcyIsInJlbW90ZUFkZHIiOiIxMjcuMC4wLjEifX19.KKPIikwUzRuB3DTpVw6ajzwSChwFw5omBMmMcWKiDcM"
+#    MERCURE_EXTRA_DIRECTIVES: |
+#      cors_origin *
+#      publish_origins *
+#      demo true
+#      anonymous
+#      subscriptions
+#    GLOBAL_OPTIONS: |
+#      auto_https off
+#    MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+#    MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
 disk: 1024
 mounts:
   "database":
@@ -27,7 +28,6 @@ mounts:
 hooks:
     build: |
       #Install Mercure using cache
-      MERCUREVERSION=0.14.4
       FILE="mercure_${MERCUREVERSION}_Linux_x86_64.tar.gz"
       if [ ! -f "$PLATFORM_CACHE_DIR/$FILE" ]; then
         URL="https://github.com/dunglas/mercure/releases/download/v${MERCUREVERSION}/$FILE"
