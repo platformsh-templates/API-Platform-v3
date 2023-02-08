@@ -2,26 +2,26 @@ name: mercure
 type: golang:1.18
 source:
     root: mercure/.config
-
+    
 build:
   flavor: none
 
 variables:
   env:
     MERCUREVERSION: 0.14.4
-#    SERVER_NAME: ":8888/mercure/"
-#    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
-#    PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site.*"
-#    MERCURE_EXTRA_DIRECTIVES: |
-#      cors_origin *
-#      publish_origins *
-#      demo true
-#      anonymous
-#      subscriptions
-#    GLOBAL_OPTIONS: |
-#      auto_https off
-#    MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
-#    MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+    SERVER_NAME: ":8888/mercure/"
+    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
+    PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site.*"
+    MERCURE_EXTRA_DIRECTIVES: |
+      cors_origin *
+      publish_origins *
+      demo true
+      anonymous
+      subscriptions
+    GLOBAL_OPTIONS: |
+      auto_https off
+    MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+    MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
 disk: 1024
 mounts:
   "database":
