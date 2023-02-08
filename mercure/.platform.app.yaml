@@ -2,6 +2,10 @@ name: mercure
 type: golang:1.18
 source:
     root: mercure/.config
+
+build:
+  flavor: none
+  
 variables:
   env:
     MERCUREVERSION: 0.14.4
