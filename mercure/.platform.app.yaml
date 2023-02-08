@@ -11,7 +11,6 @@ variables:
     MERCUREVERSION: 0.14.4
     SERVER_NAME: ":8888/mercure/"
     MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
-    PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site.*"
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origin *
       publish_origins *
@@ -20,13 +19,14 @@ variables:
       auto_https off
     MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
     MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+
 disk: 1024
+
 mounts:
-  "database":
-    source: local
-    source_path: "database"
+  "database": { source: local, source_path: "database" }
   "/.local": { source: local, source_path: .local }
   "/.config": { source: local, source_path: .config }
+
 hooks:
     build: |
       #Install Mercure using cache
@@ -48,9 +48,6 @@ web:
         /mercure/:
             allow: true
             scripts: false
-            root: "public"
-            index:
-              - "index.html"
             passthru: true
             request_buffering:
               enabled: false
