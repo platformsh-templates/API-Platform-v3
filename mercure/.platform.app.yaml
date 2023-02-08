@@ -5,7 +5,7 @@ source:
 
 build:
   flavor: none
-  
+
 variables:
   env:
     MERCUREVERSION: 0.14.4
