@@ -7,12 +7,12 @@ variables:
     SERVER_NAME: ":8888/mercure"
     MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
 #    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
-    PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site/api"
+    PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site.*"
 #      cors_origin *
 #      publish_origins *
     MERCURE_EXTRA_DIRECTIVES: |
-      cors_origin https:\/\/[a-zA-Z0-9-]+\..*.platformsh\.site.*
-      publish_origins https:\/\/[a-zA-Z0-9-]+\..*.platformsh\.site.*
+      cors_origin *
+      publish_origins *
       demo
       anonymous
       subscriptions
