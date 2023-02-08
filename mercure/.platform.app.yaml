@@ -28,6 +28,7 @@ mounts:
 hooks:
     build: |
       #Install Mercure using cache
+      echo "${MERCUREVERSION}"
       FILE="mercure_${MERCUREVERSION}_Linux_x86_64.tar.gz"
       if [ ! -f "$PLATFORM_CACHE_DIR/$FILE" ]; then
         URL="https://github.com/dunglas/mercure/releases/download/v${MERCUREVERSION}/$FILE"
