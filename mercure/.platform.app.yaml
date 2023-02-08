@@ -48,6 +48,6 @@ web:
             allow: false
             scripts: true
 
-            passthru: .well-known/mercure
+            passthru: /.well-known/mercure
             request_buffering:
               enabled: false
