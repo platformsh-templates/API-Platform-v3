@@ -12,12 +12,12 @@ log
 #header Access-Control-Allow-Credentials true
 
 route {
-    redir /mercure/ /.well-known/mercure/ui/
+    redir / /.well-known/mercure/ui/
     encode zstd gzip
 
     mercure {
         # Transport to use (default to Bolt)
-        transport_url {$MERCURE_TRANSPORT_URL:bolt:///var/run/mercure.db}
+        transport_url {$MERCURE_TRANSPORT_URL:bolt://mercure.db}
         # Publisher JWT key
         publisher_jwt {env.MERCURE_PUBLISHER_JWT_KEY} {env.MERCURE_PUBLISHER_JWT_ALG}
         # Allow anonymous subscribers (double-check that it's what you want)
