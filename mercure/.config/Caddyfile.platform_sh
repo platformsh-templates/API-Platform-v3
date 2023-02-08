@@ -29,5 +29,5 @@ route {
     }
 
 	respond /healthz 200
-	respond "Not Found tralala" 404
+	respond "Not Found (from Caddyfile.platform_sh)" 404
 }
