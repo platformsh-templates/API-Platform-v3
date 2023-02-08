@@ -46,7 +46,7 @@ web:
         /mercure/:
             allow: true
             scripts: true
-#            root: mercure
+            root: mercure
             passthru: true
             request_buffering:
               enabled: false
