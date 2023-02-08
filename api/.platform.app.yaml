@@ -54,8 +54,8 @@ mounts:
 # The hooks that will be performed when the package is deployed.
 hooks:
   build: |
-    bin/console --env=prod assets:install --no-debug
+    php bin/console -e prod assets:install --no-debug
   deploy: |
-    bin/console --env=prod doctrine:schema:update --dump-sql
-    bin/console --env=prod doctrine:schema:update --force
-    bin/console --env=prod cache:clear
+    php bin/console --env=prod doctrine:schema:update --dump-sql
+    php bin/console --env=prod doctrine:schema:update --force
+    php bin/console --env=prod cache:clear
