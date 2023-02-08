@@ -2,7 +2,7 @@ name: mercure
 type: golang:1.18
 source:
     root: mercure/.config
-    
+
 build:
   flavor: none
 
@@ -50,7 +50,8 @@ web:
         /mercure/:
             allow: true
             scripts: false
-            root: mercure
+            root: public
+            index: index.html
             passthru: true
             request_buffering:
               enabled: false
