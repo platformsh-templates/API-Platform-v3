@@ -12,7 +12,7 @@ header Access-Control-Allow-Origin {$PSH_SITE_URL}
 header Access-Control-Allow-Credentials true
 
 route {
-    redir / /.well-known/mercure/ui/
+    redir / /.well-known/mercure
     encode zstd gzip
 
     mercure {
@@ -28,6 +28,15 @@ route {
         {$MERCURE_EXTRA_DIRECTIVES}
     }
 
+	respond / `<!DOCTYPE html>
+	<html lang=en>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+	<title>Welcome to Mercure</title>
+	<h1>Welcome to Mercure</h1>
+	<p>The URL of your hub is <code>/.well-known/mercure</code>.
+	Read the documentation on <a href="https://mercure.rocks">Mercure.rocks, real-time apps made easy</a>.`
+	
 	respond /healthz 200
 	respond "Not Found (from Caddyfile.platform_sh)" 404
 }
