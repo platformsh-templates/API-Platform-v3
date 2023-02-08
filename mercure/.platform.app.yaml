@@ -11,8 +11,8 @@ variables:
 #      cors_origin *
 #      publish_origins *
     MERCURE_EXTRA_DIRECTIVES: |
-      cors_origin "^https://.*c7hsikutfepja\..*.platformsh.site.*"
-      publish_origins "^https://.*c7hsikutfepja\..*.platformsh.site.*"
+      cors_origin "*.platformsh.site.*"
+      publish_origins "*.platformsh.site.*"
       demo
       anonymous
       subscriptions
