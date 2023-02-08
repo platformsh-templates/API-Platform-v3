@@ -4,7 +4,7 @@ source:
     root: mercure/.config
 variables:
   env:
-    SERVER_NAME: ":8888/mercure"
+    SERVER_NAME: ":8888/mercure/"
     MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
 #    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
     PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site.*"
@@ -46,7 +46,7 @@ web:
         start: ./mercure run --config Caddyfile.platform_sh
     locations:
         /mercure/:
-            allow: false
+            allow: true
             scripts: true
             root: mercure
             passthru: true
