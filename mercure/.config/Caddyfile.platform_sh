@@ -12,7 +12,7 @@ log
 #header Access-Control-Allow-Credentials true
 
 route {
-    redir / /.well-known/mercure/ui/
+    redir /mercure/ /.well-known/mercure/ui/
     encode zstd gzip
 
     mercure {
