@@ -9,8 +9,8 @@ variables:
 #    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
     PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site"
     MERCURE_EXTRA_DIRECTIVES: |
-      cors_origins "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site"
-      publish_origins "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site"
+      cors_origin "^https://.*$(echo $PLATFORM_PROJECT)\..*.platformsh.site"
+      publish_origins "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site/api"
       demo
       anonymous
       subscriptions
@@ -46,7 +46,7 @@ web:
         /mercure/:
             allow: true
             scripts: true
-            root: public
+#            root: mercure
             passthru: true
             request_buffering:
               enabled: false
