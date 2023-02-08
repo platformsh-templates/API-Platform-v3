@@ -46,7 +46,7 @@ web:
         start: ./mercure run --config Caddyfile.platform_sh
     locations:
         /mercure/:
-            allow: true
+            allow: false
             scripts: true
             root: mercure
             passthru: true
