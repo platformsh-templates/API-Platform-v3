@@ -15,8 +15,6 @@ variables:
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origin *
       publish_origins *
-      demo true
-      anonymous
       subscriptions
     GLOBAL_OPTIONS: |
       auto_https off

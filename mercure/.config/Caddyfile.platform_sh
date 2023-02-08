@@ -20,7 +20,7 @@ route {
         # Publisher JWT key
         publisher_jwt {env.MERCURE_PUBLISHER_JWT_KEY} {env.MERCURE_PUBLISHER_JWT_ALG}
         # Allow anonymous subscribers (double-check that it's what you want)
-        allow_anonymous
+        # allow_anonymous
         # Subscriber JWT key
         subscriber_jwt {env.MERCURE_SUBSCRIBER_JWT_KEY} {env.MERCURE_SUBSCRIBER_JWT_ALG}
         # Extra directives
