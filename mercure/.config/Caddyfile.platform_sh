@@ -12,7 +12,7 @@ log
 #header Access-Control-Allow-Credentials true
 
 route {
-    redir / /.well-known/mercure/ui/
+    redir /mercure/ /mercure/.well-known/mercure/ui/
     encode zstd gzip
 
     mercure {
@@ -29,5 +29,5 @@ route {
     }
 
 	respond /healthz 200
-	respond "Not Found" 404
+	respond "Not Found tralala" 404
 }
