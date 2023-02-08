@@ -9,8 +9,8 @@ variables:
 #    MERCURE_TRANSPORT_URL: "bolt://mercure.db"
     PSH_SITE_URL: "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site"
     MERCURE_EXTRA_DIRECTIVES: |
-      cors_origin "^https://.*$(echo $PLATFORM_PROJECT)\..*.platformsh.site"
-      publish_origins "https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site/api"
+      cors_origin "^https://.*c7hsikutfepja\..*.platformsh.site/.*"
+      publish_origins "^https://.*c7hsikutfepja\..*.platformsh.site/.*"
       demo
       anonymous
       subscriptions
