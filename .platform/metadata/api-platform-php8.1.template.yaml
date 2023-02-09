@@ -18,7 +18,7 @@ info:
   notes:
     - heading: "Features"
       content: |
-        API Platform api v3.0.1<br />
+        API Platform api v3.4.3<br />
         API Platform admin v3.3.0<br />
         Mercure v0.14.4 server<br \>
         PHP 8.1<br />
