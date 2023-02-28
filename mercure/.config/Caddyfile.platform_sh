@@ -37,7 +37,7 @@ route {
 		cors_origins *
 		publish_origins *
 		ui
-		# demo
+		demo
 		anonymous
 		subscriptions
 		# Extra directives
