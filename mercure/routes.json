@@ -1,0 +1,111 @@
+{
+  "level": "info",
+  "ts": 1675864863.705406,
+  "logger": "http.log.access",
+  "msg": "handled request",
+  "request": {
+    "remote_ip": "127.0.0.1",
+    "remote_port": "48286",
+    "proto": "HTTP/1.1",
+    "method": "GET",
+    "host": "mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site",
+    "uri": "/mercure/",
+    "headers": {
+      "Accept-Language": [
+        "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"
+      ],
+      "Sec-Ch-Ua": [
+        "\"Not_A Brand\";v=\"99\", \"Google Chrome\";v=\"109\", \"Chromium\";v=\"109\""
+      ],
+      "Sec-Ch-Ua-Platform": [
+        "\"macOS\""
+      ],
+      "Sec-Fetch-Dest": [
+        "document"
+      ],
+      "Sec-Fetch-Mode": [
+        "navigate"
+      ],
+      "Traceparent": [
+        "00-1741de36e3d91f5a2066ee133afe2fe9-8bef551044e8f907-00"
+      ],
+      "X-Client-Ip": [
+        "88.171.74.202"
+      ],
+      "X-Original-Route": [
+        "https://{default}/mercure"
+      ],
+      "Upgrade-Insecure-Requests": [
+        "1"
+      ],
+      "X-Forwarded-For": [
+        "88.171.74.202"
+      ],
+      "X-Client-Ssl": [
+        "on"
+      ],
+      "Sec-Fetch-Site": [
+        "none"
+      ],
+      "X-Client-Verify": [
+        "NONE"
+      ],
+      "Connection": [
+        "close"
+      ],
+      "Accept-Encoding": [
+        "gzip, deflate, br"
+      ],
+      "Sec-Fetch-User": [
+        "?1"
+      ],
+      "User-Agent": [
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+      ],
+      "Accept": [
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+      ],
+      "Sec-Ch-Ua-Mobile": [
+        "?0"
+      ],
+      "X-Forwarded-Proto": [
+        "https"
+      ],
+      "Cache-Control": [
+        "max-age=0"
+      ]
+    }
+  },
+  "user_id": "",
+  "duration": 0.000005977,
+  "size": 0,
+  "status": 0,
+  "resp_headers": {
+    "Server": [
+      "Caddy"
+    ]
+  }
+}
+
+{
+  "message": "Uncaught PHP Exception Symfony\\Component\\Mercure\\Exception\\RuntimeException: \"Failed to send an update.\" at /app/vendor/symfony/mercure/src/Hub.php line 104",
+  "context": {
+    "exception": {
+      "class": "Symfony\\Component\\Mercure\\Exception\\RuntimeException",
+      "message": "Failed to send an update.",
+      "code": 0,
+      "file": "/app/vendor/symfony/mercure/src/Hub.php:104",
+      "previous": {
+        "class": "Symfony\\Component\\HttpClient\\Exception\\ClientException",
+        "message": "HTTP/2 404  returned for \"https://mercure-config-r7ciyna-c7hsikutfepja.eu-3.platformsh.site/mercure\".",
+        "code": 404,
+        "file": "/app/vendor/symfony/http-client/Response/CommonResponseTrait.php:174"
+      }
+    }
+  },
+  "level": 500,
+  "level_name": "CRITICAL",
+  "channel": "request",
+  "datetime": "2023-02-08T14:00:26.166327+00:00",
+  "extra": {}
+}
