@@ -44,7 +44,7 @@ route {
         {$MERCURE_EXTRA_DIRECTIVES}
     }
 
-	redir /mercure/ /.well-known/mercure/ui/
+	redir /mercure/ /mercure/.well-known/mercure/ui/
 
 	respond /healthz 200
 	respond "Not Found (from Caddyfile.platform_sh)" 404
