@@ -21,7 +21,7 @@ resources:
 # The configuration of app when it is exposed to the web.
 web:
     locations:
-        "/":
+        "/admin/":
             root: "build"
             index:
                 - "index.html"

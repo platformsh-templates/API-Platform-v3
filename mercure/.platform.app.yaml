@@ -46,7 +46,7 @@ web:
     commands:
         start: ./mercure run --config Caddyfile.platform_sh
     locations:
-        /mercure/:
+        /:
             allow: true
             scripts: false
             passthru: true
