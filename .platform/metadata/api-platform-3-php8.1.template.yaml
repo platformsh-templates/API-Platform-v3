@@ -29,4 +29,4 @@ initialize:
   repository: https://github.com/platformsh-templates/API-Platform-v3@main
   config: null
   files: []
-  profile: API Platform v3 ("api" on PHP 8.1 and "admin" on NodeJs v16)
+  profile: API Platform v3 ("api" on PHP 8.1, "admin" on NodeJs v16, "mercure" on Mercure 0.14.4)
