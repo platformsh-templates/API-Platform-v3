@@ -22,6 +22,7 @@ resources:
 web:
     locations:
         "/admin/":
+            passthru: "/admin/index.html"
             root: "build"
             index:
                 - "index.html"
