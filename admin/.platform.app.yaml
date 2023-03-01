@@ -55,7 +55,4 @@ hooks:
       set -eu
       corepack yarn install --immutable --force
     post_deploy: |
-#      corepack yarn run buildenvvar
-#      ls -l
-#      ls -l ./build_platform/
       corepack yarn run build

@@ -51,7 +51,7 @@
 ## About
 
 <p>
-   We have just created a new multi-app project for you, based on <a href="https://api-platform.com/docs/core/" target="_blank">API Platform component</a> and <a href="https://api-platform.com/docs/admin/" target="_blank">API Platform Admin</a>.
+   We have just created a new multi-app project for you, based on <a href="https://api-platform.com/docs/core/" target="_blank">API Platform component</a>, <a href="https://api-platform.com/docs/admin/" target="_blank">API Platform Admin</a> and <a href="https://mercure.rocks/" target="_blank">Mercure.rocks server</a>.
    <BR>The generated code has been optimized for a typical web application hosted on <a href="https://platform.sh/">Platform.sh</a>.
 </p>
 
@@ -62,6 +62,7 @@
 - Yarn v1.22.15
 - NodeJS v16
 - a sample Product and Offer Entities
+- Mercure server v0.14.4
 
 ## Getting started
 
@@ -72,7 +73,6 @@ The quickest way to deploy this template on Platform.sh is by clicking the butto
 This will automatically create a new project and initialize the repository for you.
 
 <p>
-
 <a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
