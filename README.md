@@ -6,7 +6,7 @@
 </a>
 </p>
 
-<h1 align="center">Deploy API Platform api and API Platform admin (ReactJS) on Platform.sh</h1>
+<h1 align="center">Deploy API Platform api, API Platform admin (ReactJS) and Mercure.rocks server on Platform.sh</h1>
 
 <p align="center">
 <strong>Contribute, request a feature, or check out our resources</strong>
