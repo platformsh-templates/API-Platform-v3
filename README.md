@@ -90,23 +90,9 @@ In all cases for developing with Platform.sh, it's important to develop on an is
 
 Each of the options below assume that you have already deployed this template to Platform.sh, as well as the following starting commands:
 
-
-
 1. Install the Platform.sh CLI
 
-   #### Linux/OSX
-
-   ```bash
-   brew install platformsh/tap/platformsh-cli
-   ```
-
-   #### Windows
-
-   ```bash
-   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
-   scoop install platform
-   ```
-
+   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
 
 1. Find your `PROJECT_ID` by running the command `platform project:list`
@@ -123,7 +109,8 @@ Each of the options below assume that you have already deployed this template to
    platform get PROJECT_ID
    cd project-name
    ```
-1. Start the API component with these steps:
+   
+1. Start the API component:
 
    1. `cd ./api`
 
@@ -133,18 +120,36 @@ Each of the options below assume that you have already deployed this template to
 
    1. `symfony composer install`
 
-   1. check that your api/.env file contains a valid `DATABASE_URL` to let Symfony connect to your database
+   1. check that your `api/.env` file contains a valid `DATABASE_URL` to let Symfony connect to your database
+       ``` {location="./api/.env""}
+       DATABASE_HOST=127.0.0.1
+       DATABASE_PORT=54968
+       DATABASE_NAME=api_platform
+       DATABASE_USER=api_platform
+       DATABASE_PASSWORD=api_platform
+       DATABASE_URL="postgresql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?serverVersion=14&charset=utf8"
+       ```
 
    1. `symfony console doctrine:schema:create --dump-sql`
 
    1. `symfony server:start -d`
 
-   1. et voilà, you can go on `<generatedUrlFromSymfonyServerStartCommand>/api` to display your swagger interface, showing entities Offer and Product CRUD option
+   1. you can go on `https://localhost:8000/api` to display your swagger interface, showing entities Offer and Product CRUD option
 
    > **Note:**
-   > if symfony server does not start your app using default port 8000, please change `REACT_APP_PUBLIC_URL` from `./admin/.env` file accordingly
+   > if symfony server does not start your app using default port 8000, please change `REACT_APP_PUBLIC_URL` from `./admin/.env` file
 
-1. Start the ADMIN component with these steps
+1. Start Mercure server locally in a new terminal tab
+   ```bash
+    mercure % docker run \
+       -e MERCURE_PUBLISHER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
+       -e MERCURE_SUBSCRIBER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
+       -p 8006:80 \
+       -p 8007:443 \
+       dunglas/mercure caddy run --config /etc/caddy/Caddyfile.dev
+   ```
+
+1. Start the ADMIN component in a new terminal tab
 
    1. `cd ../admin` (assuming that you were in the `./api` folder)
 
@@ -152,7 +157,7 @@ Each of the options below assume that you have already deployed this template to
 
    1. `yarn start`
 
-   1. et voilà, a new browser tab would open at url <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>   
+   1. a new browser tab open url <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>   
 
 1. Create a new branch
    ```
@@ -185,19 +190,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Install the Platform.sh CLI
 
-   #### Linux/OSX
-
-   ```bash
-   brew install platformsh/tap/platformsh-cli
-   ```
-
-   #### Windows
-
-   ```bash
-   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
-   scoop install platform
-   ```
-
+   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
 
 1. Set the project remote
@@ -241,19 +234,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Install the Platform.sh CLI
 
-   #### Linux/OSX
-
-   ```bash
-   brew install platformsh/tap/platformsh-cli
-   ```
-
-   #### Windows
-
-   ```bash
-   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
-   scoop install platform
-   ```
-
+   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
 
 1. Setup the integration:
@@ -276,19 +257,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Install the Platform.sh CLI
 
-   #### Linux/OSX
-   
-   ```bash
-   brew install platformsh/tap/platformsh-cli
-   ```
-
-   #### Windows
-
-   ```bash
-   scoop bucket add platformsh https://github.com/platformsh/homebrew-tap.git
-   scoop install platform
-   ```
-
+   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
    You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
 
 1. Create the repository
